@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 
@@ -20,7 +21,7 @@ public class DummyRestController {
     }
 
     @GetMapping("/booleanCheck/{someValue}")
-    public String booleanCheck(@PathVariable @NotNull Boolean someValue){
+    public String booleanCheck(@PathVariable @AssertTrue Boolean someValue){
         return "il valore è " + someValue;
     }
 
